@@ -45,11 +45,6 @@ public class TechnicalRequirements {
                         .returns(String.class)
                         .withParameters(Booking));
 
-        Booking.ensureMethod(method -> method
-                .named("getFormattedBooking")
-                .returns(String.class)
-                .withParameters(Formatter));
-
         ClassProxy Application = classNamed("com.galvanize.Application")
                 .ensureMethod(builder -> builder.named("getFormatter")
                         .withParameters(String.class)
@@ -95,7 +90,7 @@ public class TechnicalRequirements {
             fail("Expected Booking.parse to return an instance of Booking, but it returned null.");
         }
         validateParsedBookingValues(
-                InstanceProxy.wrap(result, Booking),
+                new InstanceProxy(result, Booking),
                 stringToParse,
                 enumClass,
                 enumConstants,

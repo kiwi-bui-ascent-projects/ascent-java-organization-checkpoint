@@ -41,6 +41,7 @@ task assess(type: JavaExec) {
 jar {
     baseName = '01-java-organization-checkpoint'
     version = '0.0.1-SNAPSHOT'
+    archiveName 'booking.jar'
 }
 
 dependencies {

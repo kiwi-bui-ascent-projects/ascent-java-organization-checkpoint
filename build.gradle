@@ -42,6 +42,13 @@ jar {
     baseName = '01-java-organization-checkpoint'
     version = '0.0.1-SNAPSHOT'
     archiveName 'booking.jar'
+
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'com.galvanize.Application'
+        )
+    }
 }
 
 dependencies {

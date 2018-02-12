@@ -1,5 +1,5 @@
-# Install latest version of Java
-FROM java:latest
+# Install latest release of Java version 9
+FROM openjdk:9-jdk-slim
 
 # Create directory for app
 RUN mkdir /app
@@ -11,9 +11,10 @@ WORKDIR /app
 ADD gradle /app/gradle
 ADD gradlew /app
 ADD gradlew.bat /app
+ADD build.gradle /app
 
 # Install dependencies
-RUN ./gradlew build
+RUN ./gradlew --no-daemon clean fetchDependencies
 
 # Add entire student fork (overwrites previously added files)
 ARG SUBMISSION_SUBFOLDER

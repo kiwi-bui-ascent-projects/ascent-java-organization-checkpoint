@@ -66,22 +66,6 @@ dependencies {
     assessmentRuntime configurations.testRuntime
 }
 
-task fetchDependencies {
-    description "Pre-downloads *most* dependencies"
-    doLast {
-        configurations.getAsMap().each { name, config ->
-            print "Fetching dependencies for $name..."
-            try {
-                config.files
-                println "done"
-            } catch (e) {
-                println ""
-                project.logger.info e.message
-            }
-        }
-    }
-}
-
 test {
     testLogging {
         exceptionFormat="full"

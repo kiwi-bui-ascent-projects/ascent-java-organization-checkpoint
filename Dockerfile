@@ -14,6 +14,14 @@ ADD gradlew.bat /app
 ADD build.gradle /app
 
 # Install dependencies
+RUN { \
+    echo 'task fetchDependencies { description "Pre-downloads *most* dependencies"'; \
+    echo 'doLast { configurations.getAsMap().each { name, config ->'; \
+    echo 'print "Fetching dependencies for $name..."'; \
+    echo 'try { config.files; println "done" }'; \
+    echo 'catch (e) { println ""; project.logger.info e.message; }'; \
+    echo '} } }'; \
+} >>/app/build.gradle
 RUN ./gradlew --no-daemon clean fetchDependencies
 
 # Add entire student fork (overwrites previously added files)

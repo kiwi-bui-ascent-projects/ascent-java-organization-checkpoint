@@ -182,8 +182,8 @@ public class TechnicalRequirements {
         if (!enumConstants.contains(result)) {
             fail(String.format(
                     "Expected getRoomType() to return an enum value from %s after parsing \"%s\", but got %s",
-                    stringToParse,
                     enumClass.getSimpleName(),
+                    stringToParse,
                     result
             ));
         }

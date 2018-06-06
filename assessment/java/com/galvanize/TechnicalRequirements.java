@@ -106,7 +106,7 @@ public class TechnicalRequirements {
         String expected = "{\n" +
                 "  \"type\": \"" + roomType + "\",\n" +
                 "  \"roomNumber\": " + roomNumber + ",\n" +
-                "  \"start Time\": \"" + startTime + "\",\n" +
+                "  \"startTime\": \"" + startTime + "\",\n" +
                 "  \"endTime\": \"" + endTime + "\"\n" +
                 "}";
 

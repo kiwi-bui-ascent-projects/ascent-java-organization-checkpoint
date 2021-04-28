@@ -10,7 +10,6 @@ import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ApplicationTest {
-
     PrintStream original;
     ByteArrayOutputStream outContent;
 
@@ -30,14 +29,18 @@ public class ApplicationTest {
 
     @Test
     public void JSONTest() {
-        String expected = "{\n\t\"type\": \"Conference Room\",\n\t\"roomNumber\": 4," +
-                "\n\t\"startTime\": \"12:00pm\",\n\t\"endTime\": \"02:00pm\"\n}";
+        String expected = "{\n" +
+                "  \"type\": \"Conference Room\",\n" +
+                "  \"roomNumber\": 4,\n" +
+                "  \"startTime\": \"12:00pm\",\n" +
+                "  \"endTime\": \"02:00pm\"\n" +
+                "}";
 
         Application.main(new String[]{ "r4-12:00pm-02:00pm", "JSON" });
 
         String actual = outContent.toString().trim();
 
-        assertEquals(expected, actual, "Testing JSON output");
+        assertEquals(expected, actual, "Testing application JSON output");
     }
 
     @Test
@@ -49,23 +52,23 @@ public class ApplicationTest {
 
         String actual = outContent.toString().trim();
 
-        assertEquals(expected, actual, "Testing JSON output");
+        assertEquals(expected, actual, "Testing application CSV output");
     }
 
     @Test
     public void HTMLTest() {
         String expected = "<dl>\n" +
-                "\t<dt>Type</dt><dd>Conference Room</dd>\n" +
-                "\t<dt>Room Number</dt><dd>4</dd>\n" +
-                "\t<dt>Start Time</dt><dd>12:00pm</dd>\n" +
-                "\t<dt>End Time</dt><dd>02:00pm</dd>\n" +
+                "  <dt>Type</dt><dd>Conference Room</dd>\n" +
+                "  <dt>Room Number</dt><dd>4</dd>\n" +
+                "  <dt>Start Time</dt><dd>12:00pm</dd>\n" +
+                "  <dt>End Time</dt><dd>02:00pm</dd>\n" +
                 "</dl>";
 
         Application.main(new String[]{ "r4-12:00pm-02:00pm", "html" });
 
         String actual = outContent.toString().trim();
 
-        assertEquals(expected, actual, "Testing JSON output");
+        assertEquals(expected, actual, "Testing application HTML output");
     }
 
 }

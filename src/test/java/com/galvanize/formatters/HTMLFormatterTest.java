@@ -12,10 +12,10 @@ public class HTMLFormatterTest {
         Formatter formatter = new HTMLFormatter();
 
         String expected = "<dl>\n" +
-                "\t<dt>Type</dt><dd>Conference Room</dd>\n" +
-                "\t<dt>Room Number</dt><dd>4</dd>\n" +
-                "\t<dt>Start Time</dt><dd>12:00pm</dd>\n" +
-                "\t<dt>End Time</dt><dd>02:00pm</dd>\n" +
+                "  <dt>Type</dt><dd>Conference Room</dd>\n" +
+                "  <dt>Room Number</dt><dd>4</dd>\n" +
+                "  <dt>Start Time</dt><dd>12:00pm</dd>\n" +
+                "  <dt>End Time</dt><dd>02:00pm</dd>\n" +
                 "</dl>";
         String actual = formatter.format(booking);
 

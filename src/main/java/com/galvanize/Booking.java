@@ -2,7 +2,6 @@ package com.galvanize;
 
 public class Booking {
     public enum Type {
-        NONE("None"),
         CONFERENCE_ROOM("Conference Room"),
         SUITE("Suite"),
         AUDITORIUM("Auditorium"),
@@ -14,7 +13,8 @@ public class Booking {
             this.type = type;
         }
 
-        public String getValue() {
+        @Override
+        public String toString() {
             return this.type;
         }
     }
@@ -50,7 +50,7 @@ public class Booking {
     public static Booking parse(String input) {
         String[] bookingInfo = input.split("-");
         char roomTypeInput = bookingInfo[0].charAt(0);
-        Type roomType = Type.NONE;
+        Type roomType = Type.CONFERENCE_ROOM;
 
         if (roomTypeInput == 'r') {
             roomType = Type.CONFERENCE_ROOM;

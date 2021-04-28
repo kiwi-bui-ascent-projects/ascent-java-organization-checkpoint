@@ -10,8 +10,12 @@ public class JSONFormatterTest {
         Booking booking = new Booking(Booking.Type.CONFERENCE_ROOM, "4", "12:00pm", "02:00pm");
         Formatter formatter = new JSONFormatter();
 
-        String expected = "{\n\t\"type\": \"Conference Room\",\n\t\"roomNumber\": 4," +
-                "\n\t\"startTime\": \"12:00pm\",\n\t\"endTime\": \"02:00pm\"\n}";
+        String expected = "{\n" +
+                "  \"type\": \"Conference Room\",\n" +
+                "  \"roomNumber\": 4,\n" +
+                "  \"startTime\": \"12:00pm\",\n" +
+                "  \"endTime\": \"02:00pm\"\n" +
+                "}";
         String actual = formatter.format(booking);
 
         assertEquals(expected, actual, "Test JSONFormatter format method");

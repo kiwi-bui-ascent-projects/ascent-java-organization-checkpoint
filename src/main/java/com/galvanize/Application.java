@@ -2,10 +2,8 @@ package com.galvanize;
 
 import com.galvanize.formatters.*;
 
-import javax.swing.*;
-
 public class Application {
-    public static Formatter formatterSelector(String outputType) {
+    public static Formatter getFormatter(String outputType) {
         switch (outputType) {
             case "json":
                 return new JSONFormatter();
@@ -22,7 +20,7 @@ public class Application {
         String input = args[0];
         String outputType = args[1];
 
-        Formatter formatter = formatterSelector(outputType);
+        Formatter formatter = getFormatter(outputType);
 
         Booking booking = Booking.parse(input);
 

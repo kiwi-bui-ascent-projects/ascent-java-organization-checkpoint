@@ -29,9 +29,43 @@ public class ApplicationTest {
     }
 
     @Test
-    public void aTest() {
-        // Write your tests here
-        // outContent.toString() will give you what your code printed to System.out
+    public void JSONTest() {
+        String expected = "{\n\t\"type\": \"Conference Room\",\n\t\"roomNumber\": 4," +
+                "\n\t\"startTime\": \"12:00pm\",\n\t\"endTime\": \"02:00pm\"\n}";
+
+        Application.main(new String[]{ "r4-12:00pm-02:00pm", "JSON" });
+
+        String actual = outContent.toString().trim();
+
+        assertEquals(expected, actual, "Testing JSON output");
+    }
+
+    @Test
+    public void CSVTest() {
+        String expected = "type,room number,start time,end time\n" +
+                "Conference Room,4,12:00pm,02:00pm";
+
+        Application.main(new String[]{ "r4-12:00pm-02:00pm", "csv" });
+
+        String actual = outContent.toString().trim();
+
+        assertEquals(expected, actual, "Testing JSON output");
+    }
+
+    @Test
+    public void HTMLTest() {
+        String expected = "<dl>\n" +
+                "\t<dt>Type</dt><dd>Conference Room</dd>\n" +
+                "\t<dt>Room Number</dt><dd>4</dd>\n" +
+                "\t<dt>Start Time</dt><dd>12:00pm</dd>\n" +
+                "\t<dt>End Time</dt><dd>02:00pm</dd>\n" +
+                "</dl>";
+
+        Application.main(new String[]{ "r4-12:00pm-02:00pm", "html" });
+
+        String actual = outContent.toString().trim();
+
+        assertEquals(expected, actual, "Testing JSON output");
     }
 
 }

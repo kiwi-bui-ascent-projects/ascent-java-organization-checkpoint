@@ -2,7 +2,21 @@ package com.galvanize;
 
 public class Booking {
     public enum Type {
-        NONE, CONFERENCE_ROOM, SUITE, AUDITORIUM, CLASSROOM;
+        NONE("None"),
+        CONFERENCE_ROOM("Conference Room"),
+        SUITE("Suite"),
+        AUDITORIUM("Auditorium"),
+        CLASSROOM("Classroom");
+
+        private String type;
+
+        private Type(String type) {
+            this.type = type;
+        }
+
+        public String getValue() {
+            return this.type;
+        }
     }
 
     private Type roomType;

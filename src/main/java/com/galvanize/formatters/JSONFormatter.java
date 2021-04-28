@@ -6,7 +6,8 @@ public class JSONFormatter implements Formatter {
     @Override
     public String format(Booking booking) {
         return String.format("{\n\t\"type\": \"%s\",\n\t\"roomNumber\": %s," +
-        "\n\t\"startTime\": \"%s\",\n\t\"endTime\": \"%s\"\n}", booking.getRoomType().getValue(), booking.getRoomNumber(),
+                        "\n\t\"startTime\": \"%s\",\n\t\"endTime\": \"%s\"\n}",
+                booking.getRoomType().getValue(), booking.getRoomNumber(),
                 booking.getStartTime(),booking.getEndTime());
     }
 }

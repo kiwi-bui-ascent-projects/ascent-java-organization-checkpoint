@@ -7,7 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CSVFormatterTest {
     @Test
     public void CSVFormatterFormatTest() {
-        Booking booking = new Booking(Booking.Type.CONFERENCE_ROOM, "4", "12:00pm", "02:00pm");
+        Booking booking = new Booking(Booking.Type.CONFERENCE_ROOM, "4",
+                "12:00pm", "02:00pm");
         Formatter formatter = new CSVFormatter();
 
         String expected = "type,room number,start time,end time\n" +

@@ -8,7 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class HTMLFormatterTest {
     @Test
     public void HTMLFormatterFormatTest() {
-        Booking booking = new Booking(Booking.Type.CONFERENCE_ROOM, "4", "12:00pm", "02:00pm");
+        Booking booking = new Booking(Booking.Type.CONFERENCE_ROOM, "4",
+                "12:00pm", "02:00pm");
         Formatter formatter = new HTMLFormatter();
 
         String expected = "<dl>\n" +

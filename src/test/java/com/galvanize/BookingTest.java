@@ -2,12 +2,12 @@ package com.galvanize;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import com.galvanize.Booking;
 
 public class BookingTest {
     @Test
     public void testBookingTestGetters() {
-        Booking actual = new Booking(Booking.Type.CONFERENCE_ROOM, "4", "12:00pm", "02:00pm");
+        Booking actual = new Booking(Booking.Type.CONFERENCE_ROOM, "4",
+                "12:00pm", "02:00pm");
 
         assertEquals(Booking.Type.CONFERENCE_ROOM, actual.getRoomType(), "Test Booking getRoomType method");
         assertEquals("4", actual.getRoomNumber(), "Test Booking getRoomNumber method");

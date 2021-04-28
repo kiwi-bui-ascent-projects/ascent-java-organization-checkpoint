@@ -33,7 +33,21 @@ public class Booking {
         return endTime;
     }
 
-    public Booking parse(String input) {
+    public static Booking parse(String input) {
+        String[] bookingInfo = input.split("-");
+        char roomTypeInput = bookingInfo[0].charAt(0);
+        Type roomType = Type.NONE;
 
+        if (roomTypeInput == 'r') {
+            roomType = Type.CONFERENCE_ROOM;
+        } else if (roomTypeInput == 's') {
+            roomType = Type.SUITE;
+        } else if (roomTypeInput == 'a') {
+            roomType = Type.AUDITORIUM;
+        } else if (roomTypeInput == 'c') {
+            roomType = Type.CLASSROOM;
+        }
+
+        return new Booking(roomType, bookingInfo[0].substring(1), bookingInfo[1], bookingInfo[2]);
     }
 }

@@ -1,7 +1,6 @@
 package com.galvanize.formatters;
 
 import com.galvanize.Booking;
-
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

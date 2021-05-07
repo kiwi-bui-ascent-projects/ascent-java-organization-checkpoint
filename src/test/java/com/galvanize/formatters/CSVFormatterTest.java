@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CSVFormatterTest {
     @Test
-    public void CSVFormatterFormatTest() {
+    public void csvFormatTest() {
         Booking booking = new Booking(Booking.Type.CONFERENCE_ROOM, "4",
                 "12:00pm", "02:00pm");
         Formatter formatter = new CSVFormatter();
@@ -15,6 +15,6 @@ public class CSVFormatterTest {
                         "Conference Room,4,12:00pm,02:00pm";
         String actual = formatter.format(booking);
 
-        assertEquals(expected, actual, "Test CSVFormatter format method");
+        assertEquals(expected, actual, "Should format into CSV");
     }
 }

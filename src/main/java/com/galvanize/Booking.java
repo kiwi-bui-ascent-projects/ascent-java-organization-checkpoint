@@ -9,7 +9,7 @@ public class Booking {
 
         private String type;
 
-        private Type(String type) {
+        Type(String type) {
             this.type = type;
         }
 

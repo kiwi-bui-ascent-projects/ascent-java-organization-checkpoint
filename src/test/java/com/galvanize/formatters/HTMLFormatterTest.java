@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class HTMLFormatterTest {
     @Test
-    public void HTMLFormatterFormatTest() {
+    public void htmlFormatTest() {
         Booking booking = new Booking(Booking.Type.CONFERENCE_ROOM, "4",
                 "12:00pm", "02:00pm");
         Formatter formatter = new HTMLFormatter();
@@ -19,6 +19,6 @@ public class HTMLFormatterTest {
                 "</dl>";
         String actual = formatter.format(booking);
 
-        assertEquals(expected, actual, "Test HTMLFormatter format method");
+        assertEquals(expected, actual, "Should format html");
     }
 }

@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class JSONFormatterTest {
     @Test
-    public void JSONFormatterFormatTest() {
+    public void jsonFormatTest() {
         Booking booking = new Booking(Booking.Type.CONFERENCE_ROOM, "4",
                 "12:00pm", "02:00pm");
         Formatter formatter = new JSONFormatter();
@@ -19,6 +19,6 @@ public class JSONFormatterTest {
                 "}";
         String actual = formatter.format(booking);
 
-        assertEquals(expected, actual, "Test JSONFormatter format method");
+        assertEquals(expected, actual, "Should format json");
     }
 }
